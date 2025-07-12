@@ -15,7 +15,7 @@
     'use strict';
 
     function getImageLinks() {
-        var urls = $("div.container div.primary-image-area div.slick-track div.slick-slide[data-slick-index]")
+        var urls = $("div.primary-image-area div.slick-track div.slick-slide[data-slick-index]")
             .filter(function () {
                 return !$(this).hasClass('slick-cloned');
             })
