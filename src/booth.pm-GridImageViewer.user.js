@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         booth.pm: Grid Image Viewer
 // @namespace    https://github.com/Elypha/userscript
-// @version      1.0
+// @version      1.1
 // @description  Adds a button to view all preview images in an overlay with a main viewer and a thumbnail grid.
 // @author       Elypha
 // @match        https://booth.pm/*/items/*
