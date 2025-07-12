@@ -1,15 +1,14 @@
 // ==UserScript==
-// @name         Image Viewer
+// @name         booth.pm: Grid Image Viewer
 // @namespace    http://tampermonkey.net/
 // @version      1.0
 // @description  Adds a button to view all preview images in an overlay with a main viewer and a thumbnail grid.
-// @author       You
+// @author       Elypha
 // @match        https://booth.pm/*/items/*
 // @match        https://*.booth.pm/items/*
 // @grant        GM_addStyle
 // @require      https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.js
-// @require      https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js
-// @resource     LIGHTBOX_CSS https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css
+// @require      https://cdn.jsdelivr.net/npm/lightbox2@2.11.5/dist/js/lightbox.min.js
 // ==/UserScript==
 
 (function ($) {
@@ -21,21 +20,18 @@
                 return !$(this).hasClass('slick-cloned');
             })
             .map(function () {
-                // The original size can sometimes be 4K and may take longer time to load.
+                // a) The original size can sometimes be 4K and may take longer time to load.
                 // return $(this).find("img").attr("data-origin");
-                // `data-lazy` returns *_base_resized, usually 1024px
-                // https://booth.pximg.net/acea9fa6-7b8c-4604-9087-5195334e9488/i/6397984/fa23b827-7f88-4db7-a7ba-a781f4525457_base_resized.jpg
-                // however, when the image has been displayed, `data-lazy` will be removed and replaced with `src`
 
+                // b) `data-lazy` returns *_base_resized, usually 1024px
+                // NOTE: when the image has been displayed, `data-lazy` will be removed and replaced with `src`
+                // https://booth.pximg.net/acea9fa6-7b8c-4604-9087-5195334e9488/i/6397984/fa23b827-7f88-4db7-a7ba-a781f4525457_base_resized.jpg
                 return $(this).find("img").attr("data-lazy") || $(this).find("img").attr("src");
             })
             .toArray();
-        // console.log("Image URLs:", urls);
-        console.log("Number of images found:", urls.length);
         return urls;
     }
 
-    // --- Styles for the Overlay and Grid ---
     GM_addStyle(`
         .image-viewer-overlay {
             position: fixed;
@@ -107,6 +103,7 @@
             cursor: pointer;
             font-size: 16px;
         }
+
         /* Custom Scrollbar */
         .image-viewer-grid::-webkit-scrollbar {
             width: 8px;
@@ -124,15 +121,7 @@
         }
     `);
 
-    // --- Button to Trigger the Viewer ---
-    const viewButton = document.createElement('button');
-    viewButton.innerText = 'View Images';
-    viewButton.className = 'view-images-btn';
-    document.body.appendChild(viewButton);
-
-    viewButton.addEventListener('click', openImageViewer);
-
-    // --- Image Viewer Functionality ---
+    // Viewer functionality
     function openImageViewer() {
         const imageUrls = getImageLinks();
         if (!imageUrls || imageUrls.length === 0) {
@@ -175,4 +164,13 @@
             grid.appendChild(thumb);
         });
     }
+
+    // Button to trigger the Viewer
+    const viewButton = document.createElement('button');
+    viewButton.innerText = 'View Images';
+    viewButton.className = 'view-images-btn';
+    document.body.appendChild(viewButton);
+
+    viewButton.addEventListener('click', openImageViewer);
+
 })(jQuery);
