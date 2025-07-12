@@ -2,7 +2,7 @@
 
 Here are the userscripts that are available in the repository.
 
-Click on the name of the userscript to install it directly via supported userscript managers like Violentmonkey.
+Click on the <ins>**Names**</ins> to install userscripts directly via supported managers like Violentmonkey.
 
 ## booth.pm
 
