@@ -19,6 +19,28 @@ function releaseUrls(fileName: string) {
 
 export const targets: UserscriptTarget[] = [
   {
+    id: "shufoo-mouse-wheel-zoom",
+    entry: "src/shufoo-mouse-wheel-zoom/main.ts",
+    fileName: "asp.shufoo.net-MouseWheelZoom.user.js",
+    userscript: {
+      name: "asp.shufoo.net: Mouse Wheel Zoom",
+      namespace: repositoryUrl,
+      version: "1.0.0",
+      description: "Zoom Shufoo flyers around the mouse pointer with the wheel.",
+      author: "Elypha",
+      license: "Apache-2.0",
+      homepageURL: repositoryUrl,
+      supportURL: `${repositoryUrl}/issues`,
+      match: [
+        "https://asp.shufoo.net/c/*",
+        "https://asp.shufoo.net/t/asp_iframe/shop/*/*",
+      ],
+      grant: "none",
+      "run-at": "document-start",
+      ...releaseUrls("asp.shufoo.net-MouseWheelZoom.user.js"),
+    },
+  },
+  {
     id: "url-clipboard",
     entry: "src/url-clipboard/main.ts",
     fileName: "URLClipboard.user.js",

@@ -4,6 +4,7 @@ Small userscripts for a slightly more convenient life on the web.
 
 ## Install
 
+- **[Shufoo Mouse Wheel Zoom](https://github.com/Elypha/userscripts/raw/refs/heads/master/dist/asp.shufoo.net-MouseWheelZoom.user.js)** — Zoom Shufoo flyers around the mouse pointer with the wheel.
 - **[Hide Lottery Results](https://github.com/Elypha/userscripts/raw/refs/heads/master/dist/bilibili.com-HideLotteryResults.user.js)** — Replace Bilibili lottery result posts with a compact placeholder.
 - **[Expand BWIKI Branches](https://github.com/Elypha/userscripts/raw/refs/heads/master/dist/wiki.biligame.com-ExpandBranches.user.js)** — Show every plot and message branch in a nested reading layout.
 - **[Grid Image Viewer](https://github.com/Elypha/userscripts/raw/refs/heads/master/dist/booth.pm-GridImageViewer.user.js)** — View booth.pm preview images all at once in an overlay.
@@ -25,6 +26,7 @@ bun run build
 
 Targets:
 
+- `shufoo-mouse-wheel-zoom`
 - `bilibili-hide-lottery-results`
 - `biligame-wiki-expand-branches`
 - `booth-grid-image-viewer`
