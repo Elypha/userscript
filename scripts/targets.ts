@@ -210,6 +210,26 @@ export const targets: UserscriptTarget[] = [
       ...releaseUrls("google.com-QuickLanguageFilter.user.js"),
     },
   },
+  {
+    id: "flaticon-free-svg-download",
+    entry: "src/flaticon-free-svg-download/main.ts",
+    fileName: "flaticon.com-FreeSVGDownload.user.js",
+    userscript: {
+      name: "flaticon.com: Free SVG Download",
+      namespace: repositoryUrl,
+      version: "1.0.1",
+      description: "Download the editable SVG for a free Flaticon icon while logged in.",
+      author: "Elypha",
+      license: "Apache-2.0",
+      homepageURL: repositoryUrl,
+      supportURL: `${repositoryUrl}/issues`,
+      icon: "https://www.flaticon.com/favicon.ico",
+      match: "https://www.flaticon.com/free-icon/*",
+      grant: "none",
+      "run-at": "document-idle",
+      ...releaseUrls("flaticon.com-FreeSVGDownload.user.js"),
+    },
+  },
 ];
 
 export function findTarget(id: string): UserscriptTarget | undefined {

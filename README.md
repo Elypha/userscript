@@ -13,6 +13,7 @@ Small userscripts for a slightly more convenient life on the web.
 - **[Preferred URLs](https://github.com/Elypha/userscripts/raw/refs/heads/master/dist/PreferredURLs.user.js)** — Normalise Booth, NGA, and Wikipedia URLs to preferred forms.
 - **[Image Actions](https://github.com/Elypha/userscripts/raw/refs/heads/master/dist/ImageActions.user.js)** — On `flowmouse:gesture`, open or copy the image under the mouse.
 - **[URL Clipboard](https://github.com/Elypha/userscripts/raw/refs/heads/master/dist/URLClipboard.user.js)** — On `flowmouse:gesture`, copy the current URL in encoded or Unicode form.
+- **[Free SVG Download](https://github.com/Elypha/userscripts/raw/refs/heads/master/dist/flaticon.com-FreeSVGDownload.user.js)** — Download the editable SVG for a free Flaticon icon while logged in.
 
 ## Development
 
@@ -35,6 +36,7 @@ Targets:
 - `image-actions`
 - `preferred-urls`
 - `url-clipboard`
+- `flaticon-free-svg-download`
 
 Repo structure:
 
