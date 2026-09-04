@@ -19,6 +19,25 @@ function releaseUrls(fileName: string) {
 
 export const targets: UserscriptTarget[] = [
   {
+    id: "uta-net-enable-selection",
+    entry: "src/uta-net-enable-selection/main.ts",
+    fileName: "uta-net.com-EnableSelection.user.js",
+    userscript: {
+      name: "uta-net.com: Enable Selection",
+      namespace: repositoryUrl,
+      version: "1.0.0",
+      description: "Restore text selection, copying, cutting, and the context menu on Uta-Net lyrics pages.",
+      author: "Elypha",
+      license: "Apache-2.0",
+      homepageURL: repositoryUrl,
+      supportURL: `${repositoryUrl}/issues`,
+      match: "https://www.uta-net.com/song/*",
+      grant: "none",
+      "run-at": "document-start",
+      ...releaseUrls("uta-net.com-EnableSelection.user.js"),
+    },
+  },
+  {
     id: "shufoo-mouse-wheel-zoom",
     entry: "src/shufoo-mouse-wheel-zoom/main.ts",
     fileName: "asp.shufoo.net-MouseWheelZoom.user.js",
